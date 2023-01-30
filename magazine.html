@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>magazine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Baskervville&family=Raleway&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        /* border: 1px solid black; */
+        background-color: rgb(20, 30, 40);;
+    }
+
+    html {
+        font-size: 10px;
+    }
+
+    body {
+        height: 2000px;
+        margin: 0 25px;
+        font-family: 'Baskervville', serif;
+        font-weight:lighter;
+        color: linen;
+        font-size: 2.4rem;
+    }
+    .hero-img {
+        max-width: 100%;
+        display: block;
+        /* height: auto; */
+        /* margin: 0 auto; */
+    }
+    .main-title {
+        font-family: 'Anton', sans-serif;
+        color:orangered;
+        font-size: 10rem;
+        font-weight: 600;
+        text-align: center;
+    }
+    .subtitle {
+        font-size: 3.3rem;
+        text-align: center;
+        color:orangered;
+    }
+    .left-author {
+        font-family: 'Raleway', serif;
+        font-size: 2.4rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: linen;
+    }
+
+    .freeCodeCamp {
+        color:linen; margin:0;
+    }
+    .fcc_link:hover {
+        background-color: rgb(2, 109, 2);
+    }
+
+    .first-paper {
+        display: grid;
+        gap: 1em;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1;
+
+        text-align: justify;
+        letter-spacing: 0.4px;
+    }
+
+    .first-paragraph {
+        margin: 0;
+    }
+
+    .first-paragraph::first-letter {
+        float:left;
+        padding: 0 10px 0 0;
+        color: orangered;
+        font-size: 3em;
+    }
+
+    blockquote {
+        margin: 1.5px 0;
+    }
+
+    hr {
+        margin: 1.5rem 0;
+        border: 1px solid rgba(120, 120, 120, 0.6);
+    }
+
+    .quote {
+        color: #00beef;
+        font-size: 3rem;
+        text-align: center;
+        font-family: "Raleway", sans-serif;
+    }
+
+    .second-paper {
+        margin-top: 1.5em;
+        display: grid;
+        column-gap: 1.2em;
+        row-gap: 0.7em;
+        grid-template-areas: "history img-dalai img-dalai"
+                             "history nested-grid nested-grid"
+                             "history img-group img-group";
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(3,1fr);
+
+        
+        text-align: justify;
+        letter-spacing: 0.4px;
+    }
+
+    .nested-grid {
+        display: grid;
+        gap: 1em;
+        grid-template-columns: 69% auto;
+        grid-template-rows: 1fr;
+    }
+
+
+    h3, h4 {
+        margin-top: 0;
+        font-family: 'Raleway', sans-serif;
+        color:#00beef;
+    }
+    h3 {
+        margin-bottom: 0;
+
+    }
+    .list-subtitle {
+        margin:0;
+    }
+    .list-paragraph {
+        margin:0 0 1em 0;
+    }
+
+    img {
+        width: 100%;
+    }
+
+</style>
+<body>
+    <img src="https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png" alt="freecodecamp logo" loading="lazy" class="hero-img">
+    <section class="main-header">
+            <header class="main-title">OUR NEW CURRICULUM</header>
+            <div class="subtitle">Our efforts to restructure our curriculum with a more project-based focus</div>
+            <div class="date-and-links" style="height: 5em; display: flex; justify-content: space-between; align-items: center;">
+                <div class="left-author">
+                    <p class="freeCodeCamp">By <a href="https://freecodecamp.org" target="_blank" rel="noreferrer" class="fcc_link">freeCodeCamp</a></p>
+                    <p style="color:rgba(255, 255, 255, 0.5); margin-top: 0">January 27, 2023</p>
+                </div>
+                <div class="links" style="width:50%;display:flex; align-items: center; justify-content: space-between;">
+                    <a href="https://www.facebook.com/freecodecamp/">
+                        <i class="fab fa-facebook-f fa-2x"></i>
+                      </a>
+                      <a href="https://twitter.com/freecodecamp/">
+                        <i class="fab fa-twitter fa-2x"></i>
+                      </a>
+                      <a href="https://instagram.com/freecodecamp">
+                        <i class="fab fa-instagram fa-2x"></i>
+                      </a>
+                      <a href="https://www.linkedin.com/school/free-code-camp/">
+                        <i class="fab fa-linkedin-in fa-2x"></i>
+                      </a>
+                      <a href="https://www.youtube.com/freecodecamp">
+                        <i class="fab fa-youtube fa-2x"></i>
+                      </a>
+                </div>
+            </div>
+    </section>
+
+    <section class="first-paper">
+        <div style="grid-column: 1; grid-row: 1; ">
+            <p class="first-paragraph">
+            Soon the freeCodeCamp curriculum will be 100% project-driven learning. Instead of a series of coding challenges, you'll learn through building projects - step by step. Before we get into the details, let me emphasize: we are not changing the certifications. All 6 certifications will still have the same 5 required projects. We are only changing the optional coding challenges.
+            </p>
+
+            After years - years - of pondering these two problems and how to solve them, I slipped, hit my head on the sink, and when I came to I had a revelation! A vision! A picture in my head! A picture of this! This is what makes time travel possible: the flux capacitor!
+            
+            It wasn't as dramatic as Doc's revelation in Back to the Future. It just occurred to me while I was going for a run. The revelation: the entire curriculum should be a series
+        </div>
+
+        <div style="grid-column: 2; grid-row: 1;  ">
+            of projects. Instead of individual coding challenges, we'll just have projects, each with their own seamless series of tests. Each test gives you just enough information to figure out how to get it to pass. (And you can view hints if that isn't enough.)
+
+            <blockquote>
+                <hr>
+                <p class="quote">
+                    " The entire curriculum should be a series of projects "
+                </p>
+                <hr>
+            </blockquote>
+
+            
+            No more walls of explanatory text. No more walls of tests. Just one test at a time, as you build up a working project. Over the course of passing thousands of tests, you build up projects and your own understanding of coding fundamentals. There is no transition between lessons and projects, because the lessons themselves are baked into projects. And there's plenty of
+        </div>
+
+        <div style="grid-column: 3; grid-row: 1; ">
+            repetition to help you retain everything because - hey - building projects in real life has plenty of repetition.
+
+            The main design challenge is taking what is currently paragraphs of explanation and instructions and packing them into a single test description text. Each project will involve dozens of tests like this. People will be coding the entire time, rather than switching back and forth from "reading mode" to "coding mode".
+            
+            Instead of a series of coding challenges, people will be in their code editor passing one test after another, quickly building up a project. People will get into a real flow state, similar to what they experience when they build the required projects at the end of each certification. They'll get that sense of forward progress right from the beginning. And freeCodeCamp will be a much smoother experience.
+        </div>
+    </section>
+
+
+    <section class="second-paper">
+        <div class="history" style="grid-area: history;">
+            <h3>A Brief History</h3>
+            <p style="margin:0">Of the Curriculum</p>
+            <ul style="list-style-type: none; padding: 0">
+                <li>
+                    <h4 class="list-subtitle">V1 - 2014</h4>
+                    <p class="list-paragraph">We launched freeCodeCamp with a simple list of 15 resources, including Harvard's CS50 and Stanford's Database Class.</p>
+                </li>
+                <li>
+                    <h4 class="list-subtitle">V2 - 2015</h4>
+                    <p class="list-paragraph">We added interactive algorithm challenges.</p>
+                </li>
+                <li>
+                    <h4 class="list-subtitle">V3 - 2015</h4>
+                    <p class="list-paragraph">We added our own HTML+CSS challenges (before we'd been relying on General Assembly's Dash course for these).</p>
+                </li>
+                <li>
+                    <h4 class="list-subtitle">V4 - 2016</h4>
+                    <p class="list-paragraph">We expanded the curriculum to 3 certifications, including Front End, Back End, and Data Visualization. They each had 10 required projects, but only the Front End section had its own challenges. For the other certs, we were still using external resources like Node School.</p>
+                </li>
+                <li>
+                    <h4 class="list-subtitle">V5 - 2017</h4>
+                    <p class="list-paragraph">We added the back end and data visualization challenges.</p>
+                </li>
+                <li>
+                    <h4 class="list-subtitle">V6 - 2018</h4>
+                    <p class="list-paragraph">We launched 6 new certifications to replace our old ones. This was the biggest curriculum improvement to date.</p>
+                </li>
+            </ul>            
+        </div>
+        
+        <div class="img-dalai" style="grid-area:img-dalai">
+            <img width="600" height="550" src="https://cdn.freecodecamp.org/testable-projects-fcc/images/random-quote-machine.png" alt="Dalai Lama quote">
+        </div>
+        <div class="nested-grid" style="grid-area: nested-grid">
+            <div class="img-calc" style="grid-column: 1;">
+                <img width="400" height="550" src="https://cdn.freecodecamp.org/testable-projects-fcc/images/calc.png" alt="calculator image">
+            </div>
+            <div class="quote" style="grid-column: 2;">
+                <blockquote>
+                    <hr>
+                  <p class="quote">
+                    " The millions of people who are learning to code through freeCodeCamp
+                    will have an even better resource to help them learn these
+                    fundamentals. "
+                  </p>
+                    <hr>
+                </blockquote>
+            </div>
+        </div>
+        <div class="img-group" style="grid-area:img-group">
+            <img src="https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg" alt="group image">
+        </div>
+    </section>
+</body>
+
+<script src="https://kit.fontawesome.com/778fdc401a.js" crossorigin="anonymous"></script>
+</html>
