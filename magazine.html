@@ -9,6 +9,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Baskervville&family=Raleway&display=swap" rel="stylesheet">
 </head>
+
+Não vou desistir:
+grid-auto-flow: row => o próximo item cria uma nova linha (default)
+                column => o próximo item cria uma nova coluna
+como colocar um flow para  que o próximo item apareça em baixo do primeiro nos grids?
+fazer o curso de grid da freecodecamp novamente
+fazer o curso de grid do youtube https://www.youtube.com/watch?v=yAO5hsNuGZA
+tentar novamente => devo conseguir
+depois, desistir
+
+depois de fazer esses dois cursos, ainda não sei como fazer. Vou fazer o freeCodeCamp pra ver como é logo... estou bem curioso pra saber como fazer.
+
+<h1>Gabarito: column-width. Não precisava fazer display grid :/</h1>
+<h2>Your .text element is not a CSS Grid, but you can create columns within an element without using Grid by using the column-width property. <h3 style="margin-bottom: 5rem;">column-width is a <u>flexible</u> property. Think of column-width as a minimum width suggestion for the browser. Once the browser cannot fit at least two columns at your specified width then the columns will stop and drop into a single column.</h3>
+
+
+</h2>
 <style>
     * {
         /* border: 1px solid black; */
@@ -27,6 +44,11 @@
         color: linen;
         font-size: 2.4rem;
     }
+
+    p {
+        margin: 0;
+    }
+
     .hero-img {
         max-width: 100%;
         display: block;
@@ -63,27 +85,52 @@
     }
 
     .first-paper {
-        display: grid;
-        gap: 1em;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr;
-        /* grid-auto-rows: 50em; */
-
+        column-width: 25rem;
         text-align: justify;
         letter-spacing: 0.4px;
-    }
+    }        
+    
+        /* .first-paragraph {
+            letter-spacing: 1px;
+            grid-row: 1 / span 2;
+        }
+        .second-paragraph {
+            grid-column: 1;
+            letter-spacing: 1.2px;
+        }
+        .third-paragraph {
+            grid-column: 1;
+        }
+        .fourth-paragraph {
+            grid-column: 1;
+        }
+        .quote-paragraph {
+            grid-column: 2;
+            grid-row: 1 ;
+        }
+        .fifth-paragraph {
+            grid-column: 2;
+            grid-row: 2;
+        }
+        .sixth-paragraph {
+            grid-column: 2;
+            grid-row: 3;
+        }
+        .last-paragraph {
+        } */
 
-    .first-part {
-        grid-column: 1; grid-row: 1;
+    /* .first-part {
+        grid-column: 1;
     }
 
     .second-part {
-        grid-column: 2; grid-row: 1;
+        grid-column: 2;
     }
 
     .third-part {
-        grid-column: 3; grid-row: 1;
-    }
+        grid-column: 3;
+    } */
+
 
     .first-paragraph {
         margin: 0;
@@ -112,6 +159,10 @@
         font-family: "Raleway", sans-serif;
     }
 
+    .quote::after, .quote::before {
+        content: '"'
+    }
+
     .second-paper {
         margin-top: 1.5em;
         display: grid;
@@ -123,7 +174,7 @@
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: repeat(3,1fr);
 
-        
+
         text-align: justify;
         letter-spacing: 0.4px;
     }
@@ -157,38 +208,58 @@
     }
 
     /* primeira responsividade:
-    first-paper => 2 colunas 
+    first-paper => 2 colunas
     second-paper => 1 coluna*/
     @media (max-width: 1127px) {
-        
-        .first-paper {
+
+        body {
+            background-color: red;
+        }
+
+        /* .first-paper {
             display: grid;
-            gap: 1em;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
+            border: 1px solid green;
+            gap: 15px;
+            grid-template-columns: repeat(auto-fill,500px);
+            grid-template-rows: repeat(5,auto);
+            grid-auto-columns: 500px;
+            grid-auto-flow: column;
             text-align: justify;
             letter-spacing: 0.4px;
-        }
-        .first-part {
-            grid-column: 1; grid-row: 1;
-        }
-
-        .second-part {
-            display: grid;
-        }
+        } */
+/* 
         
-        .two-columns-join-first-part-after {
-            grid-column: 1; grid-row: 2;
+        .first-paragraph {
+            letter-spacing: 1px;
         }
+        .second-paragraph {
+            grid-column: 1;
+            letter-spacing: 1.2px;
+        }
+        .third-paragraph {
+            grid-column: 1;
+        }
+        .fourth-paragraph {
+            grid-column: 1;
+        }
+        .quote-paragraph {
+            grid-column: 1;
+        }
+        .fifth-paragraph {
+            grid-column: 2;
+            grid-row: 1;
+        }
+        .sixth-paragraph {
+            grid-column: 2;
+            grid-row: 2;
+        }
+        .last-paragraph {
+            grid-column: 2;
+            grid-row: 3 / span 2;
+        }
+        .last-paragraph {
+        } */
 
-        .two-columns-join-third-part-before {
-            grid-column: 2; grid-row: 1;
-        }
-
-        .third-part {
-            grid-column: 2; grid-row: 2;
-        }
-        
     }
 
 </style>
@@ -223,40 +294,48 @@
     </section>
 
     <section class="first-paper">
-        <div class="first-part">
-            <p class="first-paragraph">
-            Soon the freeCodeCamp curriculum will be 100% project-driven learning. Instead of a series of coding challenges, you'll learn through building projects - step by step. Before we get into the details, let me emphasize: we are not changing the certifications. All 6 certifications will still have the same 5 required projects. We are only changing the optional coding challenges.
-            </p>
-
-            After years - years - of pondering these two problems and how to solve them, I slipped, hit my head on the sink, and when I came to I had a revelation! A vision! A picture in my head! A picture of this! This is what makes time travel possible: the flux capacitor!
-            
-            It wasn't as dramatic as Doc's revelation in Back to the Future. It just occurred to me while I was going for a run. The revelation: the entire curriculum should be a series of projects.
-        </div>
-
-        <div class="second-part">
-            <div class="two-columns-join-first-part-after">
-                 Instead of individual coding challenges, we'll just have projects, each with their own seamless series of tests. Each test gives you just enough information to figure out how to get it to pass. (And you can view hints if that isn't enough.)
-
-                <blockquote>
+            <!-- <div class="first-part"> -->
+                <p class="first-paragraph">
+                    Soon the freeCodeCamp curriculum will be 100% project-driven learning. Instead of a series of coding challenges, you'll learn through building projects - step by step. Before we get into the details, let me emphasize: we are not changing the certifications. All 6 certifications will still have the same 5 required projects. We are only changing the optional coding challenges.
+                </p>
+    
+                <p class="second-paragraph">
+                    After years - years - of pondering these two problems and how to solve them, I slipped, hit my head on the sink, and when I came to I had a revelation! A vision! A picture in my head! A picture of this! This is what makes time travel possible: the flux capacitor!
+                </p>
+    
+                <p class="third-paragraph">
+                    It wasn't as dramatic as Doc's revelation in Back to the Future. It just occurred to me while I was going for a run. The revelation: the entire curriculum should be a series of projects.
+                </p>
+            <!-- </div> -->
+    
+            <!-- <div class="second-part"> -->
+                <p class="fourth-paragraph">
+                    Instead of individual coding challenges, we'll just have projects, each with their own seamless series of tests. Each test gives you just enough information to figure out how to get it to pass. (And you can view hints if that isn't enough.)
+                </p>
+    
+                <blockquote class="quote-paragraph">
                     <hr>
                     <p class="quote">
-                        " The entire curriculum should be a series of projects "
+                            The entire curriculum should be a series of projects
                     </p>
                     <hr>
                 </blockquote>
-            </div>
-            <div class="two-columns-join-third-part-before">
-                No more walls of explanatory text. No more walls of tests. Just one test at a time, as you build up a working project. Over the course of passing thousands of tests, you build up projects and your own understanding of coding fundamentals. There is no transition between lessons and projects, because the lessons themselves are baked into projects. And there's plenty of
-            </div>
-        </div>
 
-        <div class="third-part">
-            repetition to help you retain everything because - hey - building projects in real life has plenty of repetition.
-
-            The main design challenge is taking what is currently paragraphs of explanation and instructions and packing them into a single test description text. Each project will involve dozens of tests like this. People will be coding the entire time, rather than switching back and forth from "reading mode" to "coding mode".
-            
-            Instead of a series of coding challenges, people will be in their code editor passing one test after another, quickly building up a project. People will get into a real flow state, similar to what they experience when they build the required projects at the end of each certification. They'll get that sense of forward progress right from the beginning. And freeCodeCamp will be a much smoother experience.
-        </div>
+                <p class="fifth-paragraph">
+                    No more walls of explanatory text. No more walls of tests. Just one test at a time, as you build up a working project. Over the course of passing thousands of tests, you build up projects and your own understanding of coding fundamentals. There is no transition between lessons and projects, because the lessons themselves are baked into projects. And there's plenty of repetition to help you retain everything because - hey - building projects in real life has plenty of repetition.
+                </p>
+            <!-- </div> -->
+    
+            <!-- <div class="third-part"> -->
+    
+                <p class="sixth-paragraph">
+                    The main design challenge is taking what is currently paragraphs of explanation and instructions and packing them into a single test description text. Each project will involve dozens of tests like this. People will be coding the entire time, rather than switching back and forth from "reading mode" to "coding mode".
+                </p>
+    
+                <p class="last-paragraph">
+                    Instead of a series of coding challenges, people will be in their code editor passing one test after another, quickly building up a project. People will get into a real flow state, similar to what they experience when they build the required projects at the end of each certification. They'll get that sense of forward progress right from the beginning. And freeCodeCamp will be a much smoother experience.
+                </p>
+            <!-- </div> -->
     </section>
 
 
@@ -289,9 +368,9 @@
                     <h4 class="list-subtitle">V6 - 2018</h4>
                     <p class="list-paragraph">We launched 6 new certifications to replace our old ones. This was the biggest curriculum improvement to date.</p>
                 </li>
-            </ul>            
+            </ul>
         </div>
-        
+
         <div class="img-dalai" style="grid-area:img-dalai">
             <img width="600" height="550" src="https://cdn.freecodecamp.org/testable-projects-fcc/images/random-quote-machine.png" alt="Dalai Lama quote">
         </div>
@@ -299,13 +378,13 @@
             <div class="img-calc" style="grid-column: 1;">
                 <img width="400" height="550" src="https://cdn.freecodecamp.org/testable-projects-fcc/images/calc.png" alt="calculator image">
             </div>
-            <div class="quote" style="grid-column: 2;">
+            <div class="quote-wrapper" style="grid-column: 2;">
                 <blockquote>
                     <hr>
                   <p class="quote">
-                    " The millions of people who are learning to code through freeCodeCamp
+                    The millions of people who are learning to code through freeCodeCamp
                     will have an even better resource to help them learn these
-                    fundamentals. "
+                    fundamentals.
                   </p>
                     <hr>
                 </blockquote>
